@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f1f5f9;
+      color: #111827;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e293b;
+      color: #fff;
+      position: fixed;
+      height: 100vh;
+      padding-top: 30px;
+      box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      padding: 15px 30px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .sidebar a i {
+      margin-right: 15px;
+    }
+
+    .sidebar a:hover, .sidebar a.active {
+      background-color: #0f172a;
+      color: #fff;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 40px;
+      width: 100%;
+    }
+
+    .header {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      margin-bottom: 25px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+      }
+
+      .main-content {
+        margin-left: 0;
+        margin-top: 20px;
+        padding: 20px;
+      }
+
+      .sidebar a {
+        padding: 10px;
+        flex-direction: column;
+        font-size: 14px;
+      }
+
+      .sidebar a i {
+        margin-right: 0;
+        margin-bottom: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Admin</h2>
+    <a class="active" onclick="showSection('dashboard', this)"><i class="fas fa-home"></i>Dashboard</a>
+    <a onclick="showSection('users', this)"><i class="fas fa-users"></i>Users</a>
+    <a onclick="showSection('analytics', this)"><i class="fas fa-chart-line"></i>Analytics</a>
+    <a onclick="showSection('settings', this)"><i class="fas fa-cog"></i>Settings</a>
+    <a onclick="logout()"><i class="fas fa-sign-out-alt"></i>Logout</a>
+  </div>
+
+  <div class="main-content">
+    <div id="dashboard" class="section active">
+      <div class="header">Dashboard</div>
+      <div class="card">
+        <h3>Welcome, Admin</h3>
+        <p>Here is your overview dashboard.</p>
+      </div>
+    </div>
+
+    <div id="users" class="section">
+      <div class="header">Users</div>
+      <div class="card">
+        <h3>User Management</h3>
+        <p>Manage all user accounts, permissions and roles.</p>
+      </div>
+    </div>
+
+    <div id="analytics" class="section">
+      <div class="header">Analytics</div>
+      <div class="card">
+        <h3>Site Traffic</h3>
+        <p>Views today: 8,230</p>
+      </div>
+    </div>
+
+    <div id="settings" class="section">
+      <div class="header">Settings</div>
+      <div class="card">
+        <h3>Configuration</h3>
+        <p>Adjust theme, layout, and system preferences.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showSection(sectionId, el) {
+      // Hide all sections
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+
+      // Show clicked section
+      document.getElementById(sectionId).classList.add('active');
+
+      // Set active link
+      document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function logout() {
+      window.location.href = "main.html";
+    }
+  </script>
+
+</body>
+</html>

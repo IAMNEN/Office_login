@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="index.css" />
+  <title>Admin Panel Login</title>
+</head>
+<body>
+
+  <h1>Login Form</h1>
+
+  <form onsubmit="return login(event)">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required />
+    <br />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required />
+    <br />
+
+    <label for="remember">Remember Me:</label>
+    <input type="checkbox" id="remember" name="remember" />
+    <br />
+
+    <button type="submit">Login</button>
+    <p id="errorMsg" style="color: red;"></p>
+  </form>
+
+  <script>
+    function login(event) {
+      event.preventDefault(); // ⛔ Prevent form from reloading the page
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (username === "admin" && password === "1234") {
+        window.location.href = "desktop.html"; // ✅ Redirect to dashboard
+      } else {
+        errorMsg.textContent = "Invalid username or password.";
+      }
+    }
+  </script>
+
+</body>
+</html>

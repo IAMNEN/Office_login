@@ -1,0 +1,107 @@
+/* Heading Style */
+h1 {
+    text-align: center;
+    color: #f7ea57;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 0px;
+    font-size: 36px;
+    text-shadow: 2px 2px #444;
+}
+
+/* Body Style */
+body {
+    background-color: #282c34;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Cursive', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Form Container */
+form {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(135deg, #3c4043, #2b2f33);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="password"] {
+    width: 95%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #4b4f54;
+    color: #ffffff;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus Effect */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border: 2px solid #f7ea57;
+    box-shadow: 0 0 10px rgba(247, 234, 87, 0.6);
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    margin-right: 10px;
+    vertical-align: middle;
+    transform: scale(1.2);
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f7ea57;
+    color: #282c34;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #6ac2ef;
+    box-shadow: 0 0 10px rgba(106, 194, 239, 0.6);
+}
+
+button:active {
+    background-color: #57f77c;
+    transform: scale(0.97);
+}
+
+/* Extra: Responsive Design */
+@media (max-width: 480px) {
+    form {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 16px;
+    }
+}

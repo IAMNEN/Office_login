@@ -1,0 +1,104 @@
+h1{
+    text-align: center;
+    color:#f7ea57;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+    text-shadow: 2px 2px #444;
+
+}
+body {
+    background-color: #282c34;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    font-family:cursive;
+}
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #3c4043;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 95%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #4b4f54;
+    color: #ffffff;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border: 2px solid #f7ea57;
+}
+input[type="checkbox"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f7ea57;
+    color: #282c34;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family:cursive;
+}
+button:hover {
+    background-color: #6ac2efff;
+    box-shadow: 0 0 5px #6ac2efff(121, 235, 244, 0.5);
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 0 10px rgba(106, 194, 239, 0.6);
+
+}
+button:active {
+    background-color: #57f77cff;
+    transform: scale(0.98);
+    box-shadow: 0 0 10px #57f77cff(106, 194, 239, 0.6);
+
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #f7ea57;
+    box-shadow: 0 0 5px rgba(247, 234, 87, 0.5);
+}
+input[type="text"],
+input[type="password"] {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+@media (max-width: 480px) {
+    form {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+
+
